@@ -21,6 +21,7 @@ module ExpenseTracker
 
     describe 'POST / expenses' do
       context 'when the expense is successfully recorded' do
+        #the expense has isn't valid, but that's ok. We just need to pass some data and get the canned return back no matter the input.
         let(:expense) { { 'some' => 'data' } }
         #uses rspec mock to say that :record with the arguments of expense and returns out the new RecordResult. 
           #Returns to #app calling API.new
