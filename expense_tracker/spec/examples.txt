@@ -1,8 +1,10 @@
 example_id                                         | status  | run_time        |
 -------------------------------------------------- | ------- | --------------- |
 ./spec/acceptance/expense_tracker_api_spec.rb[1:1] | pending | 0.02387 seconds |
-./spec/integration/app/ledger_spec.rb[1:1:1:1]     | passed  | 0.00639 seconds |
-./spec/integration/app/ledger_spec.rb[1:1:2:1]     | passed  | 0.00047 seconds |
+./spec/integration/app/ledger_spec.rb[1:1:1:1]     | passed  | 0.00266 seconds |
+./spec/integration/app/ledger_spec.rb[1:1:2:1]     | passed  | 0.00556 seconds |
+./spec/integration/app/ledger_spec.rb[1:2:1]       | passed  | 0.00391 seconds |
+./spec/integration/app/ledger_spec.rb[1:2:2]       | passed  | 0.00051 seconds |
 ./spec/unit/app/api_spec.rb[1:1:1:1]               | passed  | 0.00073 seconds |
 ./spec/unit/app/api_spec.rb[1:1:1:2]               | passed  | 0.00065 seconds |
 ./spec/unit/app/api_spec.rb[1:1:2:1]               | passed  | 0.00618 seconds |
