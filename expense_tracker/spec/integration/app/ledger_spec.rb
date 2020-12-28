@@ -13,7 +13,7 @@ module ExpenseTracker
       }
     end
 
-    describe '#record' do
+    describe '#record' do 
       context 'with a valid expense' do
         it 'sucessfully saves the expense in the DB' do
           
