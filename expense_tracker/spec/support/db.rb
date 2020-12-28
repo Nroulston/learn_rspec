@@ -6,6 +6,10 @@ RSpec.configure do |c|
     Sequel::Migrator.run(DB, 'db/migrations')
     DB[:expenses].truncate
   end
+
+  c.around(:example, :db) do |example|
+    DB.transaction(rollback: :always) {example.run}
+  end
 end
 
 #Spec suite should set up the test databse for you. Best practice
