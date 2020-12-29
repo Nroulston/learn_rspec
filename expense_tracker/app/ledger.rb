@@ -4,6 +4,7 @@ module ExpenseTracker
   RecordResult = Struct.new(:success?, :expense_id, :error_message)
 
   class Ledger
+    
 
     def record(expense)
       unless expense.key?('payee')
@@ -12,6 +13,10 @@ module ExpenseTracker
       end
       unless expense.key?('amount')
         message ='Invalid expense: `amount` is required'
+        return RecordResult.new(false,nil,message)
+      end
+      unless expense.key?('date')
+        message ='Invalid expense: `date` is required'
         return RecordResult.new(false,nil,message)
       end
       DB[:expenses].insert(expense)
