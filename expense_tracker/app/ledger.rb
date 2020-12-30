@@ -1,6 +1,6 @@
 require_relative '../config/sequel'
 
-module ExpenseTracker
+
   RecordResult = Struct.new(:success?, :expense_id, :error_message)
 
   class Ledger
@@ -29,4 +29,3 @@ module ExpenseTracker
       DB[:expenses].where(date: date).all
     end
   end
-end

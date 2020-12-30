@@ -3,7 +3,7 @@ require_relative '../../../app/api'
 require 'rack/test'
 require 'pry'
 
-module ExpenseTracker
+
 
   RSpec.describe API do
     include Rack::Test::Methods
@@ -106,4 +106,3 @@ module ExpenseTracker
       end
     end
   end
-end

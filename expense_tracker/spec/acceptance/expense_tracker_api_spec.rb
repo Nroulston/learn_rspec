@@ -2,7 +2,10 @@ require 'rack/test'
 require 'json'
 require_relative '../../app/api'
 
-module ExpenseTracker
+  
+
+
+
   RSpec.describe 'Expense Tracker API', :db do
     include Rack::Test::Methods
     def post_expense(expense)
@@ -42,4 +45,3 @@ module ExpenseTracker
       expect(expenses).to contain_exactly(coffee, zoo)
     end
   end
-end
