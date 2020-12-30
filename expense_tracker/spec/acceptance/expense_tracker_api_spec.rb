@@ -2,12 +2,25 @@ require 'rack/test'
 require 'json'
 require_relative '../../app/api'
 
+RSpec.shared_context 'API helpers' do
+  include Rack::Test::Methods
+
+  #Rack::Test documentation say you need an app method. Where else can you define it?
+  def app 
+    ExpenseTracker::Api.new
+  end
   
+  before do
+    basic_authroize 'test_user', 'test_password'
+  end
+end
+
 
 
 
   RSpec.describe 'Expense Tracker API', :db do
-    include Rack::Test::Methods
+    include_context 'API helpers'
+    
     def post_expense(expense)
       post '/expenses', JSON.generate(expense)
       expect(last_response.status).to eq(200)
@@ -15,10 +28,6 @@ require_relative '../../app/api'
       parsed = JSON.parse(last_response.body)      
       expect(parsed).to include('expense_id' => a_kind_of(Integer))
       expense.merge('id' => parsed['expense_id'])
-    end
-    #Rack::Test documentation say you need an app method. Where else can you define it?
-    def app
-      ExpenseTracker::API.new
     end
     
 
