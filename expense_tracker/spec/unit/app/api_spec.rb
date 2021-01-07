@@ -17,7 +17,7 @@ require 'pry'
       expect(parsed).to include(test_data)
     end
 
-    let (:ledger) { instance_double('ExpenseTracker::Ledger') }
+    let(:ledger) { instance_double('ExpenseTracker::Ledger') }
 
     describe 'POST / expenses' do
       context 'when the expense is successfully recorded' do
